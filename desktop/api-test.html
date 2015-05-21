@@ -1,0 +1,194 @@
+<html>
+<head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+
+ <section class="content-wrapper main-content clear-fix">
+        <h3>Here are the various API Calls the client can make:</h3>
+        <ol class="round">
+            <li class="one">
+                <h5>Select Team</h5>
+                <input type="button" value="Foot" id="foot" />
+                <input type="button" value="Turtles" id="turtles" />
+            </li>
+            <li class="two">
+                <h5>Get Teams</h5>
+                <input type="button" value="Get Teams" id="teams" /><br />
+                <span></span>
+            </li>
+            <li class="three">
+                <h5>Input User Info</h5>
+                Name
+                <input type="text" name="name" id="name" /><br />
+                E-Mail
+                <input type="text" name="email" id="email" /><br />
+                Phone
+                <input type="text" name="phone" id="phone" /><br />
+                <input type="radio" name="team" value="turtles" checked />Turles    
+                <input type="radio" name="team" value="foot" />Foot<br />
+                <input type="button" value="Submit" id="submit-user" />
+            </li> 
+            <li class="three">
+                <h5>Get Mission Details</h5>
+                <input type="button" value="Get Missions" id="missions" /><br />
+                <span></span>
+            </li>
+            
+        </ol>
+</section>
+<script>
+
+    $(document).ready(function ()
+    {
+        $("#foot, #turtles").click(function ()
+        {
+            var data = {}
+            data.team = {name: $(this).val() };
+
+            console.log(data);
+            $.ajax({
+                url: "service.php",
+                cache: false,
+                type: "POST",
+                data: data,
+                statusCode:
+                    {
+                        201: function (data)
+                        {
+                            console.log("201", $.parseJSON(data));
+                        },
+                        304: function (data)
+                        {
+                            console.log("304", data)
+                        },
+                        404: function (data)
+                        {
+                            console.log("404", data)
+                        },
+                        500: function (data)
+                        {
+                            console.log("500", data)
+                        }
+                    }
+
+
+            });
+        });
+
+
+        $("#teams").click(function ()
+        {
+
+
+
+            $.ajax({
+                url: "service.php?team",
+                cache: false,
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                dataType:"json",
+                statusCode:
+                    {
+                        200: function (data)
+                        {
+                            console.log("200", $.parseJSON(data));
+
+                            var footPer = Math.round((data.foot / data.total) * 100) + "%"
+                            var turtlesPer = Math.round((data.turtles / data.total) * 100) + "%"
+
+                            $("li.two").find("span").html("<b>Turtles</b> " + turtlesPer + "   :   <b>Foot Clan</b> " + footPer)
+
+                        },
+                        500: function (data)
+                        {
+                            console.log("500", data)
+                        }
+                    }
+
+
+            });
+        });
+
+
+
+
+
+        $("#submit-user").click(function ()
+        {
+
+            var user = {}
+            user.name = $("input#name").val();
+            user.email = $("input#email").val();
+            user.phone = $("input#phone").val();
+            user.team = $("input[name='team']:checked").val();
+
+            var data = {user: user};
+            
+    
+
+            $.ajax({
+                url: "service.php",
+                cache: false,
+                type: "POST",
+                data: data,
+                statusCode:
+                    {
+                        201: function (data)
+                        {
+                            console.log("201", data)
+
+                          
+
+                        },
+                        500: function (data)
+                        {
+                            console.log("500", data)
+                        }
+                    }
+
+
+            });
+        });
+        
+
+        $("#edit-missions").click(function ()
+        {
+            window.location = "/mission";
+        });
+
+        $("#missions").click(function ()
+        {
+
+
+
+            $.ajax({
+                url: "service.php?mission",
+                cache: false,
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                statusCode:
+                    {
+                        200: function (data)
+                        {
+                            console.log("response 200");
+                            console.log($.parseJSON(data));
+                            $("li.three span").html("Check your console");
+                        },
+                        500: function (data)
+                        {
+                            console.log("500", data)
+                        }
+                    }
+
+
+            });
+        });
+
+
+    });
+
+
+</script> 
+</body>
+</html>

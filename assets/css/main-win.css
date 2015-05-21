@@ -1,0 +1,21 @@
+html, body {
+	background-color:#000;
+}
+
+#mainimage {
+	margin: 0 auto 0 auto;
+}
+
+#mainimage img {
+	width:100%;
+}
+
+
+#follow {
+	text-align: center;
+	margin-bottom: 20%;
+}
+
+#follow a img {
+	max-width: 20%;
+}

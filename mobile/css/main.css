@@ -1,0 +1,16 @@
+body {
+	background: url(../images/tmnt-home-bg.jpg) no-repeat;
+}
+header div span {
+	display: block;
+	float: left;
+	text-align: center;
+}
+.winner {
+	background: #ccc;
+	width: 75%;
+}
+.loser {
+	background: #666;
+	width: 25%;
+}

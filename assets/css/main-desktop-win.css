@@ -1,0 +1,31 @@
+html, body {
+	background-color:#000;
+}
+
+#content {
+}
+
+#mainimage {
+	margin: 4em auto 50% auto;
+}
+
+#mainimage img {
+	width:100%;
+}
+
+
+#follow {
+	background: url(../images/TMNT_CC_follow.png) no-repeat 0 1em;
+	background-size: 50%;
+	padding: 0 0 0 6em;
+	position: absolute;
+	top: .5em;
+	right: 1em;
+}
+#follow a {
+	
+}
+#follow img {
+
+
+}

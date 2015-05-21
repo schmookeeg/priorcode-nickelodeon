@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+    background-color: #000000;
+	color: #ffffff;
+	font-family:helvetica,arial,sans-serif;
+}
+a {
+	color: #ffffff;	
+}
+img {
+	border-style: none;	
+}

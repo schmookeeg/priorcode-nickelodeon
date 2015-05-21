@@ -1,0 +1,34 @@
+html, body {
+	background-color:#000000;
+}
+
+#content {
+position:absolute;
+width:75%;
+margin-left:12%;
+margin-top:3%;
+}
+
+#mainimage {
+position:absolute;
+top:0%;
+
+}
+
+#mainimage img {
+	width:100%;
+}
+
+
+#follow {
+	position:absolute;
+	top:0%;
+	left:89%;
+	width:10%;
+}
+
+#follow img {
+width:24%;
+border:0px;
+
+}

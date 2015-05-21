@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+</head>
+<body style="background-color:#777;">
+<div style="margin-top: 25%;">
+<center>
+<input id="pw"><br><br>
+<input type="button" value=">>" style="height:50px;width:200px;">
+</center>
+</div>
+<script>
+	$(document).ready(function() {
+		$("#pw").live('change',function() {
+			console.log("!");
+			if($(this).val() == "n1nj4" || $(this).val() == "2012preview!")
+				location.href="index2.html";
+		});
+	});
+</script>
+
+</body>

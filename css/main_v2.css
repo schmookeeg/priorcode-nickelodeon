@@ -1,0 +1,835 @@
+@font-face {
+    font-family: 'rocks';
+    src: url('webfonts/23412E_0_0.woff') format('woff'),
+        url('webfonts/23412E_0_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* CUSTOM */
+body {
+	background: #000;
+}
+div[data-role='page'] {
+	max-width: 570px;
+	margin: 0 auto;
+}
+h1, h2, .help {
+	font-family: 'rocks'; 
+	color: #fff;
+	font-weight: normal;
+}
+h3 {
+	font-family: 'Helvetica', sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: .8em;
+}
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+ul, ul li {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+}
+p {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+a.arrow {
+	background: url(../images/tmnt-sprite.png) no-repeat right -195px;
+}
+#tmntdatepicker {
+	display: none;
+	position: relative;
+	width: 70px;
+	margin: 0 auto 2em auto;
+}
+#tmntdatepicker span {
+	padding: .2em .4em;
+	border: 1px solid;
+	position: absolute;
+	font-size: .8em;
+}
+#tmntdatepicker select {
+	opacity: 0;
+	width: 25px;
+	height: 1px;
+	position: absolute
+}
+#tmntdatepicker #select-choice-month,
+#tmntdatepicker #select-month {
+	left: 0;
+}
+#tmntdatepicker #select-choice-day,
+#tmntdatepicker #select-day {
+	left: 25px;
+}
+#tmntdatepicker #select-choice-year,
+#tmntdatepicker #select-year {
+	left: 50px;
+}
+a.help {
+	background: url(../images/tmnt-sprite.png) no-repeat 0 -80px;
+	background-size: 100%;
+	position: absolute;
+	padding: 1em;
+	display: block;
+	right: 5px;
+}
+a.back {
+	background: url(../images/tmnt-sprite.png) no-repeat 0 -130px;
+	background-size: 100%;
+	position: absolute;
+	padding: 1em;
+	z-index: 600;
+	display: block;
+	left: 15px;
+}
+.red {
+	color: #be0f34;
+}
+
+.green {
+	color: #00ae42;
+}
+.black {
+	color: #000;
+}
+
+.clans {
+	float: left;
+	margin: 1.8em 0 0 46%;
+}
+.clans > span {
+	background: url(../images/tmnt-sprite.png) no-repeat;
+	background-size: 50% auto;
+	display: inline-block;
+	padding: 3px 0 5px 30px;
+	margin-right: 5px;
+	font-size: 1.1em;
+	font-weight: bold;
+	height: 25px;
+}
+.clans > span.turtles {
+	background-position: 0 0;
+	color: #00ae42;
+}
+
+.clans > span.foot {
+	background-position: 0 -43px;
+	color: #ed1a4f;
+}
+
+div[data-role='header'] {
+	background-size: 100%;
+	width: 100%;
+	min-height: 200px; /* adjust for phones */
+	max-width: 570px;
+	position: relative;
+}
+
+div[data-role='header'] h2 {
+	position: absolute;
+	bottom: 0;
+	left: 1em;
+	font-size: 2em;
+}
+
+/* HOME */
+div.home {
+	background: url(../images/tmnt-home-bg.jpg) no-repeat top center;
+	background-size: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+div.home div.inner {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+}
+div.home h2 {
+	font-size: 1.4em;
+	padding-bottom: 20px;
+	margin: 0 5%;
+}
+div.home a {
+background: url(../images/_btn_home_cta.png) no-repeat;
+text-indent: 9999px;
+width: 100%;
+height: 4em;
+background-size: 100%;
+display: block;
+}
+
+
+
+/* CHOOSE */
+div.choose {
+	text-align: center;
+	background: #000;
+	padding: 0 0 60px 0;
+}
+div.choose div.turtles {
+	background: url(../images/tmnt-choose-turtle.jpg) no-repeat center;	
+}
+div.choose div.foot {
+	background: url(../images/tmnt-choose-foot.jpg) no-repeat center;	
+}
+div.choose div[data-role="header"] {
+	position: relative;
+	z-index: 700;
+	min-height: 5px;
+}
+div.choose h1 {
+	background: url(../images/_btn_choose_h1.png) no-repeat center;
+	background-size: 100%;
+	height: 2em;
+}
+div.choose h3 {
+	padding: 0 .6em 1.3em;
+	font-size: .8em;
+}
+div.choose > div {
+	background-size: 100%;
+	padding: 20px 0 0 0;
+}
+div.choose a.badge {
+	display: block;
+}
+
+div.choose > div > a img {
+	width: 35%;
+}
+
+
+/* SHARE */
+div.share {
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+}
+div.share h1 {
+	font-family: 'Helvetica', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: 1em;
+}
+div.share h1 span {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	line-height: 1.1em;
+}
+div.share p {
+	padding-top: 8px;
+	text-transform: uppercase;
+	font-size: .8em;
+}
+div.social-links {
+	font-family: 'rocks';
+	font-size: 1.4em;
+	margin-top: 30px;
+	text-align: center;
+}
+
+div.social-links > a,
+div.social-links > span {
+	background: url(../images/tmnt-sprite.png) right -425px no-repeat;
+	padding-right: 1.5em;
+	color: #fff;
+}
+
+div.social-links > span {
+	margin-right: .3em;
+}
+
+div.social-links a:last-child {
+	margin-left: .3em;
+}
+
+/* MISSION and MISSION DETAIL */
+div.mission, div.mission-detail {
+	color: #fff;
+}
+div.mission {
+	overflow: visible;
+}
+div.mission ul {
+	border-top-style: solid;
+	border-top-width: 2px;
+	margin: 0 15px;
+}
+div.mission h2 {
+	font-family: 'Helvetica', sans-serif;
+	font-weight: bold;
+	font-size: 1em;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+div.mission h2 span {
+	color: #fff;
+	display: block;
+}
+div.mission p {
+	padding-right: 33%;
+	text-transform: uppercase;
+	font-size: .6em;
+}
+div.mission ul li {
+	margin-bottom: 2px;
+	padding: 12px;
+	background-position: 100% -875px;
+	background-color: #000;
+	background-repeat: no-repeat;
+}
+div.mission ul li.complete {
+	margin-bottom: 2px;
+	padding: 12px;
+	background-position: 100% -975px;
+	background-color: #000;
+	background-repeat: no-repeat;
+}
+div.mission ul li > div {
+	padding: 0 0 0 75px;
+	min-height: 60px;
+	background-repeat: no-repeat;
+}
+div.mission-detail.mission1 .headergroup,
+div.mission-detail.mission2 .headergroup,
+div.mission-detail.mission3 .headergroup,
+div.mission-detail.mission4 .headergroup,
+div.mission-detail.mission5 .headergroup,
+div.mission-detail.mission6 .headergroup,
+div.mission-detail.mission7 .headergroup  {
+	background-position: 0 0,
+	100% -1439px;
+}
+div.mission ul li.mission1 > div,{
+	background-position: 0 0,
+	100% -990px;
+}
+div.mission ul li.mission2 > div {
+	background-position: 0 -130px,
+	100% -990px;
+}
+div.mission ul li.mission3 > div {
+	background-position: 0 -260px,
+	100% -990px;
+}
+div.mission ul li.mission4 > div {
+	background-position: 0 -390px,
+	100% -990px;
+}
+div.mission ul li.mission5 > div {
+	background-position: 0 -520px,
+	100% -990px;
+}
+div.mission ul li.mission6 > div {
+	background-position: 0 -650px,
+	100% -990px;
+}
+div.mission ul li.mission7 > div {
+	background-position: 0 -780px,
+	100% -990px;
+}
+div.mission ul li.facebook > div {
+	background-position: 3px -1103px,
+	100% -990px;
+}
+div.mission ul li.twitter > div {
+	background-position: 3px -1303px,
+	100% -990px;
+}
+div.mission ul li.facebook h2,
+div.mission ul li.twitter h2 {
+	padding-right: 33%;
+}
+
+/* turtle theme */
+div.mission.turtles, div.mission-detail.turtles {
+	background: #00ae42;
+}
+div.mission.turtles div[data-role='header'], div.mission-detail.turtles div[data-role='header'] {
+	background-image: url(../images/tmnt-mission-turtle-header-bg.jpg);
+}
+div.mission.turtles h2, div.mission-detail.turtles .headergroup h2, div.mission-detail.turtles h3  {
+	color: #00ae42;
+}
+div.mission.turtles ul {
+	border-top-color: #00ae42;
+}
+div.mission.turtles ul li, div.mission.turtles ul li > div, div.mission-detail.turtles .headergroup {
+	background-image: url(../images/tmnt-mission-turtle-sprite.jpg);
+}
+div.mission-detail.turtles.complete .headergroup {
+	background-image: url(../images/tmnt-mission-turtle-sprite.jpg) ,
+	url(../images/tmnt-mission-turtle-sprite.jpg);
+}
+
+/* foot theme */
+div.mission.foot, div.mission-detail.foot {
+	background: #be0f34;
+}
+div.mission.foot div[data-role='header'], div.mission-detail.foot div[data-role='header'] {
+	background-image:url(../images/tmnt-mission-foot-header-bg.jpg);
+}
+div.mission.foot h2, div.mission-detail.foot .headergroup h2, div.mission-detail.foot h3 {
+	color: #be0f34;
+}
+div.mission.foot ul {
+	border-top-color: #be0f34;
+}
+div.mission.foot ul li, div.mission.foot ul li > div, div.mission-detail.foot .headergroup {
+	background-image: url(../images/tmnt-mission-foot-sprite.jpg);
+}
+div.mission-detail.foot.complete .headergroup {
+	background-image: url(../images/tmnt-mission-foot-sprite.jpg) ,
+	url(../images/tmnt-mission-foot-sprite.jpg);
+}
+
+
+/* MISSION DETAIL 100% -990px */
+div.mission-detail {
+	overflow: hidden;
+}
+div.mission-detail .inner {
+	background: #000;
+	padding: 10px;
+	margin: 0 15px;
+	height: 100%;
+	overflow: hidden;
+}
+div.mission-detail p {
+	font-size: .8em;
+}
+div.mission-detail p.legal {
+	font-size: .6em;
+	clear: both;
+}
+div.mission-detail .headergroup {
+	padding: 0 0 17px 79px;
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+div.mission-detail .headergroup h2 {
+	font-family: 'Helvetica', sans-serif;
+	font-weight: bold;
+	font-size: 1em;
+	line-height: 1em;
+	text-transform: uppercase;
+}
+div.mission-detail .headergroup h2 span {
+	color: #fff;
+	display: block;
+}
+div.mission-detail .headergroup p {
+	padding-right: 30%;
+	padding-bottom: 1em;
+	text-transform: uppercase;
+	font-size: .65em;
+}
+div.mission-detail .content ul {
+	margin-top: 1em;
+}
+div.mission-detail .content ul li {
+	font-size: .8em;
+}
+div.mission-detail .content ul li:first-child {
+	text-decoration: underline;
+}
+div.mission-detail h3 {
+	font-family: 'Helvetica', sans-serif;
+	font-weight: bold;
+	font-size: .8em;
+	line-height: 2em;
+}
+div.mission-detail .content label {
+	font-size: .7em;
+}
+div.mission-detail .content label {
+	font-size: .8em;
+	padding: .4em;
+}
+div.mission-detail .content input {
+	background: #000;
+	padding: .1em .4em;
+	color: #fff;
+	font-size: .8em;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 0;
+}
+div.mission-detail .content video {
+	width: 100%;
+}
+div.mission-detail .complete-badge * {
+	display: none;
+}
+div.mission-detail p.submit {
+	min-height: 40px;
+	box-sizing: border-box;
+	padding-top: .5em;
+	text-align: center;
+	margin: 1em 0;
+}
+div.mission-detail p.submit span {
+	font-family: 'rocks';
+	background-repeat: no-repeat;
+	font-size: 1.5em;
+	padding: .2em 16% .2em 0;
+	background-image: url(../images/tmnt-arrow-white.png);
+	background-position: 100% center;
+}
+div.mission-detail .privacylink {
+	float: left;
+	clear: both;
+	font-size: .8em;
+	text-decoration: underline;
+	margin: 0 0 .5em 1.5em;
+}
+
+/* detail page overrides */
+div.mission-detail.mission1 .content * {
+	display: none;
+}
+div.mission-detail.mission4 .content p {
+	margin-bottom: 1em;
+}
+
+div.mission-detail.mission4 .content input {
+	width: auto;
+}
+
+div.mission-detail.mission5 .content #enteremail {
+	display: none;
+	min-height: 65px;
+}
+div.mission-detail.mission5 .content #tmntdatepicker {
+	display: block;
+	text-align: center;
+}
+div.mission-detail.mission5 .content .birthday {
+	text-align: center;
+	margin: 1em 0 .6em 0;
+}
+div.mission-detail.mission5 .content input[name='related'] {
+	margin-top: .6em;
+}
+div.mission-detail.mission5 .content input[name='email'] {
+	width: 60%;
+}
+div.mission-detail.mission5 .content input[name='related'],
+div.mission-detail.mission5 .content label[for='related'],
+div.mission-detail.mission5 .content input[name='email'] {
+	float: left;
+}
+div.mission-detail .content label[for='email'] {
+	clear: left;
+}
+
+div.mission-detail.mission6.complete .content > * {
+	display: inherit;
+}
+div.mission-detail.mission6 p.twitter a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+div.mission-detail.foot.mission6.complete .content,
+div.mission-detail.turtles.mission6.complete .content {
+	background: #000;
+}
+
+
+
+
+/* foot theme */
+div.mission-detail.foot p.submit,
+div.mission-detail.foot p.twitter,
+div.mission-detail.foot p.facebook {
+	background-color: #be0f34;
+}
+div.mission-detail.foot .content input {
+	border-color: #be0f34;
+}
+div.mission-detail.foot #tmntdatepicker span {
+	border-color: #be0f34;
+}
+div.mission-detail.foot .complete-badge,
+div.mission-detail.foot.mission1 .content {
+	background: black url(../images/tmnt-complete-foot.jpg) no-repeat top center;
+	min-height: 300px;
+	background-size: 90%;
+}
+div.mission-detail.foot.mission2 .content p.submit {
+	background: url(../images/_btn_foot_mission2_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.foot.mission3 .content p.submit {
+	background: url(../images/_btn_foot_mission3_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.foot.mission4 .content p.submit {
+	background: url(../images/_btn_foot_mission4_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.foot.mission5 .content p.submit {
+	background: url(../images/_btn_foot_mission5_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.foot.mission6 .content p.submit {
+	background: url(../images/_btn_foot_mission6_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.foot.mission6 p.facebook {
+	background: url(../images/_btn_foot_mission6_facebook.png) no-repeat left;
+	background-size: 100%;
+	width: 45%;
+	height: 3em;
+	margin-top: 1em;
+}
+div.mission-detail.foot.mission6 p.twitter {
+	display: block;
+	background: url(../images/_btn_foot_mission6_twitter.png) no-repeat left;
+	background-size: 100%;
+	width: 45%;
+	height: 3em;
+	margin-top: 1em;
+}
+
+/* turtle theme */
+div.mission-detail.turtles.mission2 .content p.submit {
+	background: url(../images/_btn_turtles_mission2_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.turtles.mission3 .content p.submit {
+	background: url(../images/_btn_turtles_mission3_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.turtles.mission4 .content p.submit {
+	background: url(../images/_btn_turtles_mission4_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.turtles.mission5 .content p.submit {
+	background: url(../images/_btn_turtles_mission5_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.turtles.mission6 .content p.submit {
+	background: url(../images/_btn_turtles_mission6_cta.png) no-repeat;
+	background-size: 100%;
+	height: 6em;
+}
+div.mission-detail.turtles.mission6 p.facebook {
+	background: url(../images/_btn_turtles_mission6_facebook.png) no-repeat left;
+	background-size: 100%;
+	width: 45%;
+	height: 3em;
+	margin-top: 1em;
+}
+div.mission-detail.turtles.mission6 p.twitter {
+	background: url(../images/_btn_turtles_mission6_twitter.png) no-repeat left;
+	background-size: 100%;
+	width: 45%;
+	height: 3em;
+	margin-top: 1em;
+}
+div.mission-detail.turtles .content input {
+	border-color: #00ae42;
+}
+div.mission-detail.turtles #tmntdatepicker span {
+	border-color: #00ae42;
+}
+div.mission-detail.turtles .complete-badge,
+div.mission-detail.turtles.mission1 .content {
+	background: black url(../images/tmnt-complete-turtle.jpg) no-repeat top center;
+	min-height: 300px;
+	background-size: 90%;
+}
+
+/* LEGAL */
+div.legal {
+	background-size: 100%;
+}
+div.legal div[data-role='header'] {
+
+}
+div.legal .inner {
+	background: #000;
+	padding: 20px 10px 10px 10px;
+	margin: 0 11px;
+}
+div.legal h3 {
+	font-family: 'Helvetica', sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+div.legal ul {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: underline;
+	line-height: 2em;
+}
+
+div.legal p {
+	color: #ccc;
+	font-size: .8em;
+}
+div.legal ol {
+	color: #ccc;
+	font-size: .8em;
+	list-style-position: inside;
+	margin: 1em 0;
+	padding: 0;
+}
+div.legal ol li {
+	margin-bottom: 1em;
+}
+div.legal .policy {
+	display: none;
+}
+
+/* foot theme */
+div.legal.foot {
+	background: #be0f34;
+}
+div.legal.foot div[data-role='header'] {
+	background:#be0f34 url(../images/tmnt-legal-foot-header-bg.jpg) no-repeat;
+}
+
+div.legal.foot h3, div.legal.foot a {
+	color: #be0f34;
+}
+
+/* turtle theme */
+div.legal.turtles {
+	background: #00ae42;
+}
+div.legal.turtles div[data-role='header'] {
+	background: #00ae42 url(../images/tmnt-legal-turtle-header-bg.jpg) no-repeat;
+}
+
+div.legal.turtles h3, div.legal.turtles a {
+	color: #00ae42;
+}
+
+/* MEDIA QUERIES */
+@media
+only screen and (min-width: 465px) {
+	div[data-role='header'] {
+		min-height: 265px;
+	}
+	div.home {
+		height: 450px;
+	}
+}
+@media 
+only screen and (min-height: 768px) {
+	
+}
+@media screen and (orientation: landscape){
+	
+	div.home h2 {
+	font-size: 1em;
+	padding-bottom: 0;
+	}
+	
+	div.choose h3{
+		font-size: .8em;
+	}
+}
+
+@media 
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5),
+only screen and (max-width: 320px) {
+	a.arrow {
+		background: url(../images/tmnt-sprite.png) no-repeat right -195px;
+	}
+	div[data-role='header'] {
+	min-height: 155px; /* adjust for phones */
+	}
+	div[data-role='header'] h2 {
+		font-size: 1.2em;
+	}
+	div.home {
+		height: 410px;
+	}
+	div.home h2 {
+		padding-bottom: 0;
+	}
+	div.home a {
+	height: 2em;
+	}
+	div.choose h1 {
+	height: 1em;
+	}
+	div.mission ul {
+		margin: 0 11px;
+	}
+	div.mission-detail .inner  {
+	margin: 0 11px;
+	}
+	div.mission-detail.mission4.turtles p.submit {
+		font-size: .4em;
+		padding-top: 1.7em;
+	}
+	div.mission-detail.mission4 p.submit {
+		font-size: .6em;
+	}
+	div.mission-detail.mission5 .content p.submit span {
+	}
+	div.mission-detail.mission5 .content input[name='related'] {
+		margin: .4em .5em 0 0;
+	}
+	div.mission-detail.mission6 p.submit span {
+		padding: 0;
+	}
+	/*
+div.mission-detail.mission6 p.submit.facebook,
+	div.mission-detail.mission6 p.submit.twitter {
+		width: 45%;
+		padding: .5em 0 0;
+		min-height: 30px;
+	}
+	div.mission-detail.mission6 p.twitter a,
+	div.mission-detail.mission6 p.facebook span{
+		font-size: 1em;
+	}
+*/
+	div.mission-detail .privacylink {
+	float: left;
+	clear: both;
+	font-size: .8em;
+	text-decoration: underline;
+	margin: 0 0 .5em 2.2em;
+}
+}
+
+
